@@ -50,27 +50,38 @@ public class CalculadoraServlet extends HttpServlet {
 		
 
 		Calcular cal = new Calcular(var1, var2);
-				
-				if(operacao.equals("soma") ) {
-					 int result = cal.somar();
-					 request.setAttribute("res", result);
-					
-				} else if (operacao.equals("sub")) {
-					int result = cal.subtrair();
-					 request.setAttribute("res", result);
-					 
-				}else if (operacao.equals("div")) {
-					int result = cal.dividir();
-					request.setAttribute("res", result);
-					
-				}else if (operacao.equals("mult")){
-					int result = cal.multiplicar();
-					request.setAttribute("res", result);
-				}
+		int result;		
+//				if(operacao.equals("soma") ) {
+//					 int result = cal.somar();
+//					 request.setAttribute("res", result);
+//					
+//				} else if (operacao.equals("sub")) {
+//					int result = cal.subtrair();
+//					 request.setAttribute("res", result);
+//					 
+//				}else if (operacao.equals("div")) {
+//					int result = cal.dividir();
+//					request.setAttribute("res", result);
+//					
+//				}else if (operacao.equals("mult")){
+//					int result = cal.multiplicar();
+//					request.setAttribute("res", result);
+//				}
 		
+		if(request.getParameter("btnSomar") != null) {
+			 result = cal.somar();
+		} else if (request.getParameter("btnSub") != null) {
+			 result = cal.subtrair();
+		}else if (request.getParameter("btnMulti") != null) {
+			 result = cal.multiplicar();
+		}else {
+			result = cal.dividir();
+		}
+	request.setAttribute("result", result); 
+	}
 		
 	
-	}
+		
 	request.getRequestDispatcher("/").forward(request, response); //redireciona para ele mesmo
 	
 	}

@@ -10,32 +10,33 @@
 </head>
 <body>
 
-<div class="col-12 card bg-light mx-auto">
+<div class="col-8 card bg-light mx-auto">
               <h3 class="text-center card-header">Calculadora</h3>
               <form class="card-body" method="post" action="CalculadoraServlet">
                
              <div class="form-group row">
 	                  <label for="primeiroValor" class="col-form-label">Valor 1:</label>
 	                  <div class="input-group">
-	                 	 <input type="number" class="form-control" name="var1" aria-describedby="basic-addon1" placeholder="2">
+	                 	 <input type="number" class="form-control" name="var1" aria-describedby="basic-addon1" placeholder="">
 	                 </div>
                   </div>
          		 <div class="form-group row">
                   <label for="segundoValor" class="col-form-label">Valor 2:</label>
                   
                <div class="input-group">
-                      <input type="number" class="form-control" name="var2" aria-describedby="basic-addon2"placeholder="3">
+                      <input type="number" class="form-control" name="var2" aria-describedby="basic-addon2"placeholder="">
                   </div>
-                 <div>
-	                 <select class="form-select" name="operacao" size="3" aria-label="size 3 select example">
-						  <option>Escolha uma operação</option>
-						  <option value="soma">somar</option>
-						  <option value="sub">subtrair</option>
-						  <option value="div">dividir</option>
-						  <option value="mult">multiplicar</option>
-					 </select>
-					 <button type="reset" class="btn btn-success">Calcular</button>
+                 <div class="align-items-center mt-2 mb-3">
+                    
+		            <button  type="reset" class="btn btn-success  btn-lg">Calcular</button>
+		            <button type="submit" name="btnSomar"      value="+" class="btn btn-success btn-lg">+</button>
+		            <button type="submit" name="btnSub"      value="-" class="btn btn-success btn-lg">-</button>
+		            <button type="submit" name="btnMulti"   value="*" class="btn btn-success btn-lg">*</button>
+		            <button type="submit" name="btnDiv"  value="/" class="btn btn-success btn-lg">/</button> 
+         		 					
 					 <h4>Resultado = ${requestScope.result}</h4>
+				</div>
+				
 				</div> 
                 
                 </div>
@@ -44,7 +45,7 @@
               	 
                 </form>
             
-            </div>
+            
             
             
  
